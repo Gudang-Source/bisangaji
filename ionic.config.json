@@ -1,0 +1,7 @@
+{
+  "name": "bisangaji",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

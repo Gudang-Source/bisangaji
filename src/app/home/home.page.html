@@ -1,0 +1,156 @@
+<ion-header [translucent]="true">
+  <!-- Default Searchbar -->
+  <ion-searchbar></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="border-radius">
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <ion-card-header>
+              <ion-card-subtitle class="description-subtitle">Waktu Saat Ini</ion-card-subtitle>
+              <ion-card-title class="jam">{{ jam }}</ion-card-title> {{ waktu_bagian }}
+            </ion-card-header>
+          </ion-col>
+
+          <ion-col style="text-align: right;">
+            <ion-card-header>
+              <ion-card-subtitle class="description-subtitle">Waktu Dhuhur</ion-card-subtitle>
+              <ion-card-title class="jam">11:58</ion-card-title>
+            </ion-card-header>
+          </ion-col>
+        </ion-row>
+        <ion-card-content style="text-align: center;">
+          {{ hari }}, {{tanggal}}
+        </ion-card-content>
+          <!-- <ion-card-content>
+            Keep close to Nature's heart... and break clear away, once in awhile,
+            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          </ion-card-content> -->
+
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-subtitle>
+
+    </ion-card-subtitle>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="chatbubbles"></ion-icon>
+            </a>
+
+          </div>
+          <div class="title">
+            AyoNgaji
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="book"></ion-icon>
+            </a>
+          </div>
+          <div class="title">
+            Al-Qur'an
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="timer"></ion-icon>
+            </a>
+
+          </div>
+          <div class="title">
+            Waktu Sholat
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="compass"></ion-icon>
+            </a>
+          </div>
+          <div class="title">
+            Arah Kiblat
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="hand-left"></ion-icon>
+            </a>
+
+          </div>
+          <div class="title">
+            Dzikir
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="cloudy-night"></ion-icon>
+            </a>
+          </div>
+          <div class="title">
+            Do'a Harian
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="qr-code"></ion-icon>
+            </a>
+
+          </div>
+          <div class="title">
+            Hadist
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="bullet button">
+            <a href="">
+              <ion-icon name="grid"></ion-icon>
+            </a>
+          </div>
+          <div class="title">
+            Lainnya
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="./../../assets/kajian.png" />
+    <!-- <ion-card-subtitle>
+      Kajian Sunnah
+    </ion-card-subtitle>
+    <ion-card-content>
+      Alhamdulillahilladzi bini’matihi tatimmushshalihaat (Segala puji bagi Allah yang dengan nikmat-Nya sempurnalah segala kebaikan).
+    </ion-card-content> -->
+  </ion-card>
+
+
+</ion-content>

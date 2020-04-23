@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="large">Al Qur'an</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Default Segment -->
+<ion-segment (ionChange)="segmentChanged($event)">
+  <ion-segment-button value="Surat">
+    <ion-label>Surat</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="Juz">
+    <ion-label>Juz</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="Bookmark">
+    <ion-label>Bookmark</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+</ion-content>
