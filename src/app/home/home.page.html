@@ -3,7 +3,16 @@
   <ion-searchbar></ion-searchbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content *ngIf="loading =='1'" [fullscreen]="true">
+  <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  Loading page ... mohon tunggu sebentar ya :)
+</ion-content>
+
+
+
+
+
+<ion-content *ngIf="loading =='0'" [fullscreen]="true">
   <ion-card class="border-radius">
     <ion-row>
       <ion-col>
@@ -44,96 +53,74 @@
     <ion-card-content>
       <ion-row>
         <ion-col>
-          <div class="bullet button">
-            <a href="">
+          <button class="bullet button ayongaji" (click)="quran()">
               <ion-icon name="chatbubbles"></ion-icon>
-            </a>
-
-          </div>
+          </button>
           <div class="title">
             AyoNgaji
           </div>
         </ion-col>
 
         <ion-col>
-          <div class="bullet button">
-            <a href="">
+          <button class="bullet button quran" (click)="quran()">
               <ion-icon name="book"></ion-icon>
-            </a>
-          </div>
+          </button>
           <div class="title">
             Al-Qur'an
           </div>
         </ion-col>
 
         <ion-col>
-          <div class="bullet button">
-            <a href="">
+          <button class="bullet button waktu-sholat" (click)="quran()">
               <ion-icon name="timer"></ion-icon>
-            </a>
-
-          </div>
+          </button>
           <div class="title">
             Waktu Sholat
           </div>
         </ion-col>
 
         <ion-col>
-          <div class="bullet button">
-            <a href="">
+          <button class="bullet button arah-kiblat" (click)="quran()">
               <ion-icon name="compass"></ion-icon>
-            </a>
-          </div>
+          </button>
           <div class="title">
             Arah Kiblat
           </div>
         </ion-col>
       </ion-row>
 
-
-
       <ion-row>
         <ion-col>
-          <div class="bullet button">
-            <a href="">
-              <ion-icon name="hand-left"></ion-icon>
-            </a>
-
-          </div>
+          <button class="bullet button dzikir" (click)="quran()">
+            <ion-icon name="hand-left"></ion-icon>
+          </button>
           <div class="title">
             Dzikir
           </div>
         </ion-col>
 
         <ion-col>
-          <div class="bullet button">
-            <a href="">
-              <ion-icon name="cloudy-night"></ion-icon>
-            </a>
-          </div>
+          <button class="bullet button doa" (click)="quran()">
+            <ion-icon name="cloudy-night"></ion-icon>
+          </button>
           <div class="title">
             Do'a Harian
           </div>
         </ion-col>
 
         <ion-col>
-          <div class="bullet button">
-            <a href="">
-              <ion-icon name="qr-code"></ion-icon>
-            </a>
-
-          </div>
+          <button class="bullet button hadist" (click)="quran()">
+            <ion-icon name="qr-code"></ion-icon>
+          </button>
           <div class="title">
             Hadist
           </div>
         </ion-col>
 
         <ion-col>
-          <div class="bullet button">
-            <a href="">
-              <ion-icon name="grid"></ion-icon>
-            </a>
-          </div>
+          <button class="bullet button lainnya" (click)="quran()">
+            <ion-icon name="grid"></ion-icon>
+          </button>
           <div class="title">
             Lainnya
           </div>

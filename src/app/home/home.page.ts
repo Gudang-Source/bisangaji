@@ -1,5 +1,6 @@
 import { ApiService } from './../api.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 // import { ApiService}
 
 @Component({
@@ -10,16 +11,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor(private http: ApiService) {}
+  constructor(private http: ApiService, private route: Router) {}
   tanggal: string;
   jam: string;
   hari: string;
   waktu_bagian: string;
+  loading: string = '1';
 
   ngOnInit() {
     setInterval(() => {
       this.http.worldDate().subscribe((res: any) => {
         // console.log(res)
+        this.loading = '0';
         let ip = res.client_ip;
         let waktu_bagian = res.abbreviation;
         let day_of_week = res.day_of_week;
@@ -91,8 +94,15 @@ export class HomePage {
       }, (err) => {
         console.log(err);
       })
-    }, 3000)
+    }, 10000)
+  }
 
+  quran() {
+    this.route.navigate(['/home/quran'], {
+      queryParams: {
+        token: '1223309'
+      }
+    })
   }
 
 }
