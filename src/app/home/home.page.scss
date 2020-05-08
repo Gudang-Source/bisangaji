@@ -54,6 +54,9 @@ ion-icon {
   background-size: cover;
   padding:20px 0px;
 }
+.border-radius2 {
+  border-radius: 10px;
+}
 .jam {
   font-size:2rem;
   font-weight: 600;
@@ -110,4 +113,18 @@ ion-col.md.hydrated {
   background: #4fc6db;
   border: 1px solid #4fc6db!important;
   columns: #000000!important;
+}
+.text-left {
+  text-align: left;
+  display: block;
+}
+.text-right {
+  text-align: right;
+}
+.text-3rem {
+  font-size: 2rem;
+}
+ion-card:hover {
+  background: #333333;
+  transition: ease all .6s;
 }

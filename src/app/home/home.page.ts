@@ -93,17 +93,34 @@ export class HomePage {
 
       }, (err) => {
         console.log(err);
-      })
-    }, 10000)
+      });
+    }, 10000);
   }
 
   quran() {
-    this.route.navigate(['/home/quran'], {
-      queryParams: {
-        token: '1223309'
-      }
-    })
+    this.route.navigate(['/tabs-nav/home/quran'])
   }
+
+  jadwal_sholat() {
+    this.route.navigate(['/tabs-nav/home/sholat'])
+  }
+
+  lainnya() {
+
+  }
+
+  arah_kiblat() {
+
+  }
+
+  dzikir() {
+
+  }
+
+  doa_harian() {
+
+  }
+
 
 }
 

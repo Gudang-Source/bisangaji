@@ -1,11 +1,32 @@
-<ion-header [translucent]="true">
+<ion-header *ngIf="kondition == '1'">
   <ion-toolbar>
     <ion-title size="large">Al Qur'an</ion-title>
   </ion-toolbar>
 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-header *ngIf="kondition == '2'">
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">{{ surat_detail.name_latin }} - {{ surat_detail.name }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="kondition == '2'" [fullscreen]="true">
+  <ion-card *ngFor="let item of surat_detail.text; let i = index">
+    <ion-card-content>
+      <ion-card-title>
+        {{ item.i+1 }}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+<ion-content *ngIf="kondition == '1'" [fullscreen]="true">
 
   <!-- Default Segment -->
 <ion-segment (ionChange)="segmentChanged($event)">
@@ -19,5 +40,58 @@
     <ion-label>Bookmark</ion-label>
   </ion-segment-button>
 </ion-segment>
+
+<ion-row *ngIf="segment == 'Surat'" >
+  <ion-col>
+    <ion-card class="border-radius2" *ngFor="let data of surat; let i = index">
+      <ion-card-content (click)="quran_surah(i + 1)" >
+        <ion-card-title class="text-left">
+          <span class="text-left">{{ data.title }}</span>
+        </ion-card-title>
+        <ion-card-title class="text-right">
+          <span class="text-3rem text-right">{{ data.titleAr }}</span>
+        </ion-card-title>
+
+        <div class="text-left">
+          <span class="text-left">Surat Ke: {{ i + 1 }} [ {{ data.title }} ]</span>
+          {{ data.place }} | {{ data.type }}<br/>
+          Jumlah Ayat: {{ data.count }}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="segment == 'Juz'">
+  <ion-col>
+    <ion-card *ngFor="let data of juz">
+      <ion-card-content>
+        <ion-card-title>
+          <ion-label class="text-left"> Juz: {{ data.index }}</ion-label>
+        </ion-card-title>
+        <ion-label class="text-left">{{ data.start.name }} ({{ data.start.verse?.substr(6,4)}}) - {{ data.end.name }} ({{ data.end.verse?.substr(6,4)}})</ion-label>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-col>
+</ion-row>
+
+<ion-row *ngIf="segment == 'Bookmark'">
+  <ion-col>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{bookmark}}
+          <!-- <ion-list>
+            <ion-item *ngFor="let data of juz">
+              <ion-label class="text-left"> {{ data.title }}</ion-label>
+              <ion-label class="text-right" slot="end">{{ data.titleAr }}</ion-label>
+            </ion-item>
+          </ion-list> -->
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-col>
+</ion-row>
+
 
 </ion-content>
